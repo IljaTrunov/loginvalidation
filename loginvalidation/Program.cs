@@ -1,32 +1,36 @@
-﻿using System;
+using System;
 
-namespace loginvalidation
+namespace loginValidation
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string login = "adming";
+            string login = "admin";
             string password = "pass1234";
+            int try1 = 3;
 
-            string userName, userPassword;
+            string userName, userPass;
 
-            Console.WriteLine("enter your password:");
-            userName = Console.ReadLine();
-            Console.WriteLine("enter your password:");
-            userPassword = Console.ReadLine();
-
-            if (login == userName && password == userPassword);
+            while (try1 != 0)
             {
-                Console.WriteLine("Welcome");
+                Console.WriteLine("Enter your username: ");
+                userName = Console.ReadLine();
+                Console.WriteLine("Enter your password: ");
+                userPass = Console.ReadLine();
+                try1 -= 1;
+                if (login == userName && password == userPass)
+                {
+                    Console.WriteLine("Welcome!");
+                }
+                else if (try1 > 0)
+                {
+                    Console.WriteLine($"More {try1} tries!");
+                }
+                Console.WriteLine();
             }
-            else
-            {
-                Console.WriteLine("Oops. Something is wrong);
-            }
-                
-
-
+            Console.WriteLine("Oops. Something went wrong!");
         }
     }
 }
+
